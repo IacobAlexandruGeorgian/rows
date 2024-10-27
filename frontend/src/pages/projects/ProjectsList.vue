@@ -186,7 +186,7 @@ export default {
             }
 
             this.loading = true;
-            axios.post('/project/search', {search: this.search}).then((response) => {
+            axios.post('/project/search', {role: this.search}).then((response) => {
                 this.projects = response.data.projects;
                 this.currentPage = 1;
                 
