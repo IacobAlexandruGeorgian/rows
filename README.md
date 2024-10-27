@@ -17,7 +17,7 @@
   - use lazy loading to extract only the columns needed from the database
   - use cache to store the data who isn't often changed
 
-## picturef from the project
+## pictures from the project
 
 ![image](https://github.com/user-attachments/assets/93127142-e63d-4894-a262-00664c5ad024)
 
