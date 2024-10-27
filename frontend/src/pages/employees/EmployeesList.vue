@@ -11,7 +11,7 @@
         </div>
 
         <b-table v-else :items="paginatedEmployees" :fields="employeefields" striped responsive="sm">
-            <template #cell(project)="data">
+            <template #cell(projects)="data">
                 <b-button @click="showProjects(data.item)" variant="primary"><b-icon icon="eye"></b-icon></b-button>
             </template>
         </b-table>
@@ -43,7 +43,7 @@ export default {
     name: 'EmployeesList',
     data() {
         return {
-            employeefields: ['name', 'email', 'phone', 'project'],
+            employeefields: ['name', 'email', 'phone', 'projects'],
             projectFields: ['name', 'domain', 'role'],
             employees: [],
             selectedEmployeeProjects: [],
@@ -76,7 +76,7 @@ export default {
             axios.get('/employees').then((response) => {
                 this.employees = response.data.employees;
             }).catch(() => {
-                this.$refs.toastr.s("An error occurred while fetching employees.", "Error", {
+                this.$toastr.s("An error occurred while fetching employees.", "Error", {
                     position: "toast-top-right"
                 });
             }).finally(() => {

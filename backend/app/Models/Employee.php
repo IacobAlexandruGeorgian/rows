@@ -12,16 +12,9 @@ class Employee extends Model
 
     protected $guarded = [];
 
+    // task 1 - Retrieve all projects an employee is working on, including the role they have in each project.
     public function projects()
     {
         return $this->belongsToMany(Project::class, 'employee_project')->withPivot('role')->as('assignment');
-    }
-
-    public function scopeWithProjectsAndRole(Builder $query)
-    {
-        return $query->with(['projects' => function ($query) {
-            $query->select('projects.id', 'projects.name')
-                ->withPivot('role')->as('assignment');
-        }]);
     }
 }

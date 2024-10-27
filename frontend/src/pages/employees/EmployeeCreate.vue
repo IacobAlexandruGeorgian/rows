@@ -142,7 +142,7 @@ export default {
                     project.text = project.name;
                 });
             }).catch(() => {
-                this.$refs.toastr.s("An error occurred while fetching the projects.", "Error", {
+                this.$toastr.s("An error occurred while fetching the projects.", "Error", {
                     position: "toast-top-right"
                 });
             });

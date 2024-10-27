@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 
 class EmployeeController extends Controller
 {
+    // task bonus
     public function index()
     {
         $employees = Employee::with('projects')->orderBy('created_at', 'desc')->get();
@@ -17,6 +18,7 @@ class EmployeeController extends Controller
         ];
     }
 
+    // task bonus
     public function store(Request $request)
     {
         $employee = Employee::create([
