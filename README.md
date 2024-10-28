@@ -10,6 +10,7 @@
   - create .env file and create the connection with the database
   - run commands in the backend folder - composer install and after php artisan serve
   - run commands in frontend - npm install and after npm run serve
+  - change the base url in the main.js to correspond with the url from the backend
 
 ## task 4 - large dataset
   - index the columns where are used in filtering the data
